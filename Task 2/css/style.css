@@ -1,0 +1,160 @@
+* {box-sizing:border-box}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+}
+
+button {
+  -moz-appearance: none;
+  -webkit-appearance: none; 
+  background: transparent;
+  border: 0;
+  outline: none;
+}
+
+.slider {
+  position: relative;
+  width: 300px;
+  height: 250px;
+}
+
+
+.slider_nav {
+  position: absolute;
+  height: 100%;
+  width: 40px;
+  top: 0;
+  font-size: 3em;
+  color: #FFF;
+  cursor: pointer;
+}
+
+.slide_prev {
+  left: 0;
+}
+
+.slide_next {
+  right: 0;
+}
+
+.slide_prev__arrow,
+.slide_next__arrow {
+  position: relative;
+  top: 40%;  
+}
+
+.slide_prev__arrow {
+  left: 5px;
+}
+
+.slide_next__arrow {
+  right: 5px;
+}
+
+
+.slide {
+  display: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.slide.active {
+  display: flex;
+}
+
+.slide, .slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slide img {
+  position: absolute;
+  z-index: -1;
+}
+
+.slide_indicator {
+  position: absolute;
+  padding: 10px;
+  color: #FFF;
+  background: rgba(0,0,0, .5);  
+}
+
+.slide_content * {
+  color: #FFF;
+}
+
+.slide_content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;   
+  padding: 15px;
+}
+
+.slide_content h2,
+.slide_content_sponsored__text {
+  text-shadow: 1px 1px #000;
+}
+
+.slide_content h2 {
+  margin-top: 0;
+  margin-bottom: 5px;
+  font-size: 1.2em;
+}
+
+.slide_content_sponsored {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.slide_content__button {
+  padding: 8px 10px;
+  border-radius: 5px;
+  background: #3D8ECC;
+  text-decoration: none;
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.35);
+  transition: .3s;
+}
+
+.slide_content__button:hover {
+  background: #396CE3;
+  transition: .3s;
+}
+
+.slider_nav {
+  text-shadow: 2px 2px #000; 
+}
+
+.slide img {
+  -webkit-animation-name: animateBg;
+  animation-name: animateBg;
+  -webkit-animation-duration: 5000ms;
+  animation-duration: 5000ms;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-timing-function: cubic-bezier(.3,0,.7,1);
+  animation-timing-function: cubic-bezier(.3,0,.7,1);
+  animation-iteration-count: 1;
+}
+
+
+
+
+    
+
+@keyframes animateBg {
+  from {
+    -ms-transform: scale(1);
+    transform: scale(1) translateZ(1px);
+  }
+
+  to {
+    -ms-transform: scale(1.25, 1.25);
+    transform: scale(1.25, 1.25) translateZ(1px);
+  }
+}

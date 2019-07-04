@@ -1,0 +1,269 @@
+* {box-sizing:border-box}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+}
+
+h1 {
+	text-align: center;
+}
+
+.content {
+	width: 680px;
+	margin: 0 auto;
+}
+
+.tiles,
+.tile,
+.tile_header {
+	display: flex;
+	position: relative;
+    align-items: flex-start;
+}
+
+.tiles {
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	border-top: 2px solid #DDD;
+}
+
+.three_columns_tiles .tile {
+	width: calc(33.33% - 15px);
+}
+
+.one_column_tile .tile {
+	width: 100%;
+}
+
+.two_columns_tiles .tile {
+	width: calc(50% - 15px);
+}
+
+.two_columns_with_list {
+	position: relative;
+	height: 100%;
+}
+
+.two_columns_with_list > .tile {
+    width: calc(45% - 15px);
+    margin-bottom: 0;
+}
+
+.two_columns_with_list > .list_column {
+	width: 55%;
+}
+
+.two_columns_with_list > .tile,
+.two_columns_with_list > .list_column {
+	height: 245px;
+}
+
+.tile.tile__small {
+    height: calc(33.33% - 8px);
+}
+
+.tile {
+	flex-direction: column;
+	margin-bottom: 15px;
+}
+
+.tile.tile__big {
+	margin-bottom: 0;
+}
+
+.tile.tile__small {
+	flex-direction: row;
+}
+
+.tile_header { 
+	width: 100%;
+	margin-bottom: 5px;
+	align-items: flex-end;
+	justify-content: flex-end;
+}
+
+.three_columns_tiles .tile_header {
+	height: 125px;
+}
+
+.two_columns_with_list > .tile .tile_header {
+	height: 200px;
+	border: 2px solid #DDD;
+}
+
+.one_column_tile .tile_header {
+	height: 450px;
+	margin-bottom: 0;
+}
+
+.two_columns_tiles .tile_header {
+	height: 200px;
+}
+
+.two_columns_with_list > .list_column .tile_header {
+    height: 100%;
+    width: 30%;
+	margin-right: 10px;
+    margin-bottom: 0;
+}
+
+.two_columns_with_list > .list_column .tile_content {
+	width: 70%;
+}
+
+.two_columns_with_list > .list_column .tile_header__source_link {
+	font-size: .6em;
+}
+
+.tile.tile__small {
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+	border-bottom: 2px solid #DDD;
+}
+
+.tile.tile__small:last-of-type {
+	padding-bottom: 0;
+	margin-bottom: 0;
+	border-bottom: 0;
+}
+
+.tile img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	z-index: -1;
+}
+
+.three_columns_tiles .tile h2 {
+	font-size: 1.2em;
+}
+
+.one_column_tile .tile h2 {
+	margin-top: 15px;
+	font-size: 2.15em;
+}
+
+.tile h2 {
+	margin-top: 0;
+	margin-bottom: 0;
+	font-size: 1.2em;
+	font-weight: 600;
+	color: #515150;
+}
+
+.tile_header__source_link {
+	padding: 8px;
+	font-size: .8em;
+	color: #FFF;
+	background: rgba(50,50,50, .5);
+	text-decoration: none;
+}
+
+.tile_header__source_link.ad {
+	padding: 5px;
+}
+
+.tile_header__source_link.ad span {
+	display: flex;
+	font-size: .85em;
+	padding: 5px;
+	border: 1px solid #FFF;
+	border-radius: 5px;
+}
+
+.tile_content {
+	display: flex;
+    align-items: flex-start;	
+}
+
+
+
+@media screen and (max-width: 767px) {
+
+	h1 {
+		font-size: 1.6em;
+	}
+
+	.content {
+		width: 100%;
+	}
+
+	.three_columns_tiles .tile,
+	.two_columns_tiles .tile {
+		width: calc(50% - 10px);
+	}	
+
+	.three_columns_tiles .tile_header {
+		height: 100px;
+	}
+
+	.two_columns_tiles .tile_header {
+		height: 125px;
+	}
+
+	.two_columns_with_list > .tile {
+		width: 80%;
+		margin: 0 auto;
+		margin-bottom: 15px;
+	}
+
+	.two_columns_with_list > .list_column {
+		width: 100%;
+	}
+
+	.tile.tile__small {
+    	height: 90px;		
+		border-bottom-width: 1px;
+	}
+
+	.tile.tile__small:first-of-type {
+	    border-top: 1px solid #ddd;
+	    padding-top: 10px;
+	}
+
+	.tiles {
+    	padding-top: 10px;
+    	padding-bottom: 10px;
+		border-top-width: 1px;
+	}
+
+	.three_columns_tiles .tile h2,
+	.tile h2 {
+		font-size: 1em;
+	}
+
+	.one_column_tile .tile h2 {
+		margin-top: 10px;
+		font-size: 1.4em;
+	}
+
+	.tile_header__source_link {
+		font-size: .6em;
+	}
+
+	.one_column_tile .tile_header {
+		height: 250px;
+	}
+
+	.two_columns_with_list > .list_column .tile_header {
+		width: 40%;
+	}
+
+	.two_columns_with_list > .list_column .tile_content {
+		width: 60%;
+	}
+
+	.two_columns_with_list > .tile,
+	.two_columns_with_list > .list_column {
+		height: 100%;
+	}
+
+
+
+}
